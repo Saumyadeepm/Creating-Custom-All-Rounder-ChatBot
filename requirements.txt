@@ -2,3 +2,5 @@ nltk
 keras
 numpy
 tensorflow
+streamlit-chat
+streamlit
