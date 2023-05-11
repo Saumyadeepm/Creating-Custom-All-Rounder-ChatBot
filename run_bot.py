@@ -94,11 +94,11 @@ def chatbot_response(msg):
             if j.lower() == 'yes':
                 break
             elif j.lower() == 'no':
-                st.write(random.choice(["Good to see you back", "Welcome back", "Good to have you back"]))
+                chat(random.choice(["Good to see you back", "Welcome back", "Good to have you back"]))
                 continue
 
         a = chatbot_response(i)  # Replace with your chatbot response logic
-        st.write(a)
+        chat(a)
 
 if __name__ == "__main__":
     main()
