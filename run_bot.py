@@ -85,12 +85,23 @@ def chatbot_response(msg):
 
 
 import streamlit as st
-from streamlit_chat import message
+from streamlit_chat import streamlit_chat
 
-message("My message") 
-message("Hello bot!", is_user=True)
+def main():
+    st.title("Chatbot")
 
-        
-                          
-if __name__ == "__main__":
-    main()  
+    while True:
+        i = st.text_input(">", key="input")
+
+        if i.lower() == 'exit':
+            j = st.text_input("Are you sure? (Yes/No)", key="confirmation")
+            if j.lower() == 'yes':
+                break
+            elif j.lower() == 'no':
+                message(random.choice(["Good to see you back", "Welcome back", "Good to have you back"]))
+                continue
+
+        a = chatbot_response(i)  # Replace with your chatbot response logic
+        message(a)
+if __name__ == '__main__':
+    main()
