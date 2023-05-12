@@ -1,6 +1,6 @@
 # **Importing Libraries To Use The ChatBot**
 import streamlit as st
-from streamlit_chat import message
+from streamlit_chat import message, streamlit_chat
 import nltk
 nltk.download('wordnet')
 nltk.download('punkt')
@@ -102,6 +102,9 @@ def main():
                 continue
 
         a = chatbot_response(i)  # Replace with your chatbot response logic
+        # Assign a unique key to the streamlit_chat widget
+        chat_key = "chat_" + str(random.randint(1, 1000))
+        message(a, key=chat_key)
         message(a)
 
 
