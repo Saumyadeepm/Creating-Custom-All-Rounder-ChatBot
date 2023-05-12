@@ -91,10 +91,13 @@ def main():
     st.title("Chatbot")
 
     while True:
-        i = st.text_input(">", key="input")
+        input_key = "input_" + str(random.randint(1, 1000))  # Generate a unique key for the input widget
+        confirmation_key = "confirmation_" + str(random.randint(1, 1000))  # Generate a unique key for the confirmation widget
+
+        i = st.text_input(">", key=input_key)
 
         if i.lower() == 'exit':
-            j = st.text_input("Are you sure? (Yes/No)", key="confirmation")
+            j = st.text_input("Are you sure? (Yes/No)", key=confirmation_key)
             if j.lower() == 'yes':
                 break
             elif j.lower() == 'no':
@@ -103,5 +106,6 @@ def main():
 
         a = chatbot_response(i)  # Replace with your chatbot response logic
         message(a)
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
