@@ -1,6 +1,6 @@
 # **Importing Libraries To Use The ChatBot**
 import streamlit as st
-from streamlit_chat import chat
+from streamlit_chat import message
 import nltk
 nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
@@ -94,11 +94,11 @@ def main():
             if j.lower() == 'yes':
                 break
             elif j.lower() == 'no':
-                chat(random.choice(["Good to see you back", "Welcome back", "Good to have you back"]))
+                message(random.choice(["Good to see you back", "Welcome back", "Good to have you back"]))
                 continue
 
         a = chatbot_response(i)  # Replace with your chatbot response logic
-        chat(a)
+        message(a)
 
 if __name__ == "__main__":
     main()
