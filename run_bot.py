@@ -85,7 +85,7 @@ def chatbot_response(msg):
 
 
 import streamlit as st
-from streamlit_chat import streamlit_chat
+
 
 def main():
     st.title("Chatbot")
