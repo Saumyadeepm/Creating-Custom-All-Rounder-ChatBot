@@ -1,6 +1,6 @@
 # **Importing Libraries To Use The ChatBot**
 import streamlit as st
-from streamlit_chat import message, streamlit_chat
+from streamlit_chat import message
 import nltk
 nltk.download('wordnet')
 nltk.download('punkt')
