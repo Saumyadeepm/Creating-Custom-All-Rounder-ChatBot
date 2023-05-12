@@ -18,10 +18,10 @@ import random
 # Loading The number and name of Classes that was classified and stored at
 ##   the top most cell using pickle
 
-model = load_model('/content/Chatbot_Files/chatbot_model.h5')
-intents = json.loads(open('/content/Chatbot_Files/intents.json').read())
-words = pickle.load(open('/content/Chatbot_Files/words.pkl','rb'))
-classes = pickle.load(open('/content/Chatbot_Files/classes.pkl','rb'))
+model = load_model('AssistaBot_model.h5')
+intents = json.loads(open('intents.json').read())
+words = pickle.load(open('words.pkl','rb'))
+classes = pickle.load(open('classes.pkl','rb'))
 
 
 # Defining Function for Tokenizing the patterns
