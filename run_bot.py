@@ -84,6 +84,7 @@ def chatbot_response(msg):
     return res
 
 
+"""
 def main():
     st.title("Chatbot")
 
@@ -106,6 +107,15 @@ def main():
         chat_key = "chat_" + str(random.randint(1, 1000))
         message(a, key=chat_key)
         message(a)
+"""
+import streamlit as st
+from streamlit_chat import chat
+
+# Set the title of the web app
+st.title("ChatBot")
+
+# Create the chat interface using streamlit-chat
+chat(component='chatbot', placeholder="Ask me anything...")
 
 
         
