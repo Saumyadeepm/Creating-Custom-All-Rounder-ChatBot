@@ -87,23 +87,23 @@ def chatbot_response(msg):
 def main():
     st.title("Chatbot")
 
-    input_key = "input_" + str(random.randint(1, 1000))  # Generate a unique key for the input widget
-
     while True:
-        i = st.text_input(">", key=input_key)
-
-        if i.lower() == 'exit':
-            confirmation_key = "confirmation_" + str(random.randint(1, 1000))  # Generate a unique key for the confirmation widget
-            j = st.text_input("Are you sure? (Yes/No)", key=confirmation_key)
-            if j.lower() == 'yes':
-                break
-            elif j.lower() == 'no':
-                message(random.choice(["Good to see you back", "Welcome back", "Good to have you back"]))
-                continue
+        input_key = "input_" + str(random.randint(1, 1000))  # Generate a unique key for the input widget
+        i = st.text_input(">", key)
+            if i.lower() == 'exit':
+                confirmation_key = "confirmation_" + str(random.randint(1, 1000))  # Generate a unique key for the confirmation widget
+                j = st.text_input("Are you sure? (Yes/No)", key=confirmation_key)
+                if j.lower() == 'yes':
+                    break
+                elif j.lower() == 'no':
+                    message(random.choice(["Good to see you back", "Welcome back", "Good to have you back"]))
+                    continue
 
         a = chatbot_response(i)  # Replace with your chatbot response logic
         message(a)
 
+        
+                          
 if __name__ == "__main__":
     main()
   
