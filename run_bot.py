@@ -109,14 +109,10 @@ def main():
         message(a)
 """
 import streamlit as st
-from streamlit_chat import chat
+from streamlit_chat import message
 
-# Set the title of the web app
-st.title("ChatBot")
-
-# Create the chat interface using streamlit-chat
-chat(component='chatbot', placeholder="Ask me anything...")
-
+message("My message") 
+message("Hello bot!", is_user=True
 
         
                           
