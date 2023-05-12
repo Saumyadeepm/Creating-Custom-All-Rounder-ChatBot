@@ -84,21 +84,21 @@ def chatbot_response(msg):
 
   
 def main():
-st.title("Chatbot")
+    st.title("Chatbot")
 
-while True:
-    i = st.text_input(">", key="input")
+    while True:
+        i = st.text_input(">", key="input")
 
-    if i.lower() == 'exit':
-        j = st.text_input("Are you sure? (Yes/No)", key="confirmation")
-        if j.lower() == 'yes':
-            break
-        elif j.lower() == 'no':
-            chat(random.choice(["Good to see you back", "Welcome back", "Good to have you back"]))
-            continue
+        if i.lower() == 'exit':
+            j = st.text_input("Are you sure? (Yes/No)", key="confirmation")
+            if j.lower() == 'yes':
+                break
+            elif j.lower() == 'no':
+                chat(random.choice(["Good to see you back", "Welcome back", "Good to have you back"]))
+                continue
 
-    a = chatbot_response(i)  # Replace with your chatbot response logic
-    chat(a)
+        a = chatbot_response(i)  # Replace with your chatbot response logic
+        chat(a)
 
 if __name__ == "__main__":
     main()
