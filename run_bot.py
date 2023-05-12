@@ -83,29 +83,27 @@ def chatbot_response(msg):
     res = getResponse(ints, intents)
     return res
 
-
-import streamlit as st
-
-
 def main():
     st.title("Chatbot")
 
+    i = st.text_input(">")
     while True:
-        input_key = "input_" + str(random.randint(1, 1000))  # Generate a unique key for the input widget
-        confirmation_key = "confirmation_" + str(random.randint(1, 1000))  # Generate a unique key for the confirmation widget
-
-        i = st.text_input(">", key=input_key)
-
         if i.lower() == 'exit':
-            j = st.text_input("Are you sure? (Yes/No)", key=confirmation_key)
+            j = st.text_input("Are you sure? (Yes/No)")
             if j.lower() == 'yes':
                 break
             elif j.lower() == 'no':
-                message(random.choice(["Good to see you back", "Welcome back", "Good to have you back"]))
+                st.write(random.choice(["Good to see you back", "Welcome back", "Good to have you back"]))
+                i = st.text_input(">")
                 continue
 
         a = chatbot_response(i)  # Replace with your chatbot response logic
-        message(a)
+        st.write(a)
+        i = st.text_input(">")
+
+
+
+
 
 if __name__ == "__main__":
     main()
